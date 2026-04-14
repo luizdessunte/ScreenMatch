@@ -1,0 +1,6 @@
+# Configuração da API OMDB
+# Renomeie este arquivo para config.properties e adicione sua chave de API
+
+omdb.api.key=SUA_CHAVE_API_AQUI
+omdb.api.url=https://www.omdbapi.com/
+
