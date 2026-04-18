@@ -2,11 +2,15 @@ package br.com.alura.screenmatch.modelos;
 
 import br.com.alura.screenmatch.calculos.Classificavel;
 
+/**
+ * Classe que representa um episódio de uma série
+ * Implementa Classificavel para permitir recomendações baseadas em visualizações
+ */
 public class Episodio implements Classificavel {
     private int numero;
     private String nome;
     private Serie serie;
-    private int totalVisualizacoes;
+    private int totalVisualizacoes; // Métrica importante para recomendação
 
     public int getTotalVisualizacoes() {
         return totalVisualizacoes;
@@ -40,6 +44,13 @@ public class Episodio implements Classificavel {
         this.serie = serie;
     }
 
+    /**
+     * Implementação do método getClassificacao da interface Classificavel
+     * Classifica o episódio baseado no número de visualizações
+     * - Mais de 100 visualizações: classificação 4 (excelente)
+     * - 100 ou menos: classificação 2 (bom)
+     * @return Classificação do episódio (2 ou 4)
+     */
     @Override
     public int getClassificacao() {
         if (totalVisualizacoes > 100) {

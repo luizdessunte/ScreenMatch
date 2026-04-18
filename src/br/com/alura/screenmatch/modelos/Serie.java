@@ -1,8 +1,12 @@
 package br.com.alura.screenmatch.modelos;
 
+/**
+ * Classe que representa uma Série de TV
+ * Herda de Titulo e adiciona atributos específicos de série
+ */
 public class Serie extends Titulo {
     private int temporadas;
-    private boolean ativa;
+    private boolean ativa; // Indica se a série ainda está em produção
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
 
@@ -42,6 +46,12 @@ public class Serie extends Titulo {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
+    /**
+     * Sobrescreve getDuracaoEmMinutos da classe pai
+     * Calcula a duração total multiplicando temporadas * episódios * minutos por episódio
+     * Útil para saber quanto tempo levaria para maratonar a série toda
+     * @return Duração total em minutos de todas as temporadas
+     */
     @Override
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
